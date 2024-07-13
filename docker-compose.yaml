@@ -1,0 +1,5 @@
+services:
+    node-1:
+      container_name: node-1
+      build: ./node/
+
