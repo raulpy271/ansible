@@ -11,7 +11,7 @@ Build and run the container: `docker compose up -d --build`
 Enter in the control node and execute the plybook in all managed nodes: 
 ```
 # Enter in the control-node
-$ docker exec -ti control-node bash
+$ docker exec -ti control-node sh
 # Inside the container tell ansible to execute playbook in all nodes
 $ ansible-playbook -kK playbook.yaml
 ```
