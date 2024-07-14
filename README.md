@@ -2,6 +2,8 @@
 
 This project is a experiment where it's launched 5 docker containers. Four of them are managed nodes and the other one is a control node with ansible installed. With this architecture, the control node is able to run commands in all nodes and manage them. 
 
+![Architecture](./assets/arch.png)
+
 ## Usage
 
 Build and run the container: `docker compose up -d --build`
