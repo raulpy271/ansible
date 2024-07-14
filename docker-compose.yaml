@@ -1,5 +1,23 @@
 services:
+    control-node:
+      container_name: control-node
+      build: ./control-node
+      command: sleep infinity
+      depends_on:
+        - node-1
+        - node-2
+        - node-3
+        - node-4
+
     node-1:
       container_name: node-1
       build: ./node/
-
+    node-2:
+      container_name: node-2
+      build: ./node/
+    node-3:
+      container_name: node-3
+      build: ./node/
+    node-4:
+      container_name: node-4
+      build: ./node/

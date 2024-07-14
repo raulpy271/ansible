@@ -1,0 +1,7 @@
+[nodes]
+node-[1:4]
+
+[nodes:vars]
+ansible_connection=ssh
+ansible_user=node-user
+ansible_port=8080
