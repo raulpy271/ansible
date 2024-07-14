@@ -1,0 +1,34 @@
+---
+- name: Clone repository
+  hosts: nodes
+  tasks:
+    - name: Install git
+      become: true
+      ansible.builtin.apt:
+        name: git
+    - name: Create repository directory
+      become: true
+      ansible.builtin.file:
+        path: /ansible
+        state: directory
+        mode: '0755'
+        owner: node-user
+    - name: Clone repository
+      ansible.builtin.git:
+        repo: https://github.com/raulpy271/ansible.git
+        dest: /ansible
+
+- name: Run script to access the BrasilAPI
+  hosts: nodes
+  tasks:
+    - name: Install requests
+      ansible.builtin.pip:
+        name: requests
+    - name: Run script
+      ansible.builtin.script: script.py
+      args:
+        executable: python3
+        creates: script-result.txt
+    - name: Show script result
+      ansible.builtin.command: cat script-result.txt
+

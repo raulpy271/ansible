@@ -6,4 +6,5 @@ RUN pip install ansible-core
 
 COPY ansible.cfg /etc/ansible/ansible.cfg
 COPY hosts /etc/ansible/hosts
-
+COPY playbook.yaml /playbook.yaml
+COPY script.py /script.py

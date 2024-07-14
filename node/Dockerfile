@@ -3,7 +3,8 @@ ARG SSH_PORT=8080
 ARG USER=node-user
 ARG PASSWORD=node-pass
 
-RUN apt update && apt install -y openssh-server
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt install -y sudo python3-pip python3-apt openssh-server 
 
 RUN useradd -m -s /bin/bash -Gsudo $USER
 RUN echo "$USER:$PASSWORD" | chpasswd
