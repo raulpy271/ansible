@@ -17,3 +17,7 @@ $ ansible-playbook -kK playbook.yaml
 ```
 
 The playbook is a descriptive file located in `control-node/playbook.yaml`. It's example of how the playbook files looks like, this playbook installs git and clone this repository in all nodes. After it, the playbook run a script in all nodes.
+
+## TO-DO
+
+- Avoid password authentication.
